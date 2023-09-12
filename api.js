@@ -74,7 +74,7 @@ function diep_api() {
     
     viewport: false,
     viewport_color: "#000000",
-    viewport_opacity: 0.1,
+    viewport_opacity: 0.5,
     
     pos_phase: 0,
     positions: [[NaN, NaN], [NaN, NaN], [NaN, NaN], [NaN, NaN], [NaN, NaN], [NaN, NaN]],
