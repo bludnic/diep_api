@@ -668,41 +668,41 @@ function diep_api() {
       api.emit("key.up", e);
     });
     
-    api.execute = win.input.execute;
-    win.input.execute = api.override_extended(win.input.execute, function(fn, str) {
-      console.log("execute: str arg", fn, str)
-      str = str.trim().replace(/\s{2,}/g, " ");
-      const s = str.split(" ");
-      console.log("execute: s params", str)
-      switch(s[0]) {
-        case "ren_ui_scale": {
-          api.ui_scaling = parseFloat(s[1]);
-          break;
-        }
-        case "ren_grid_base_alpha": {
-          api.grid_opacity = Math.max(0.001, parseFloat(s[1]) / 2);
-          str = str.replace(s[1], (api.grid_opacity * 2).toString());
-          break;
-        }
-        case "ren_grid_color": {
-          api.grid_color = "#" + parseInt(s[1]).toString(16).padStart(6, "0");
-          break;
-        }
-        case "ren_background_color": {
-          api.background_color = "#" + parseInt(s[1]).toString(16).padStart(6, "0");
-          break;
-        }
-        case "ren_minimap_viewport": {
-          api.viewport = (s[1] != "false" && s[1] != "0");
-          return;
-        }
-        case "ren_pattern_grid": return;
-      }
-      return fn.call(this, str);
-    });
-    win.input.set_convar = api.override(win.input.set_convar, function(...args) {
-      return win.input.execute.call(this, args.join(" "));
-    });
+    // api.execute = win.input.execute;
+    // win.input.execute = api.override_extended(win.input.execute, function(fn, str) {
+    //   console.log("execute: str arg", fn, str)
+    //   str = str.trim().replace(/\s{2,}/g, " ");
+    //   const s = str.split(" ");
+    //   console.log("execute: s params", str)
+    //   switch(s[0]) {
+    //     case "ren_ui_scale": {
+    //       api.ui_scaling = parseFloat(s[1]);
+    //       break;
+    //     }
+    //     case "ren_grid_base_alpha": {
+    //       api.grid_opacity = Math.max(0.001, parseFloat(s[1]) / 2);
+    //       str = str.replace(s[1], (api.grid_opacity * 2).toString());
+    //       break;
+    //     }
+    //     case "ren_grid_color": {
+    //       api.grid_color = "#" + parseInt(s[1]).toString(16).padStart(6, "0");
+    //       break;
+    //     }
+    //     case "ren_background_color": {
+    //       api.background_color = "#" + parseInt(s[1]).toString(16).padStart(6, "0");
+    //       break;
+    //     }
+    //     case "ren_minimap_viewport": {
+    //       api.viewport = (s[1] != "false" && s[1] != "0");
+    //       return;
+    //     }
+    //     case "ren_pattern_grid": return;
+    //   }
+    //   return fn.call(this, str);
+    // });
+    // win.input.set_convar = api.override(win.input.set_convar, function(...args) {
+    //   return win.input.execute.call(this, args.join(" "));
+    // });
   }
   
   const c = win.CanvasRenderingContext2D.prototype;
