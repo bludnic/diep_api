@@ -670,8 +670,10 @@ function diep_api() {
     
     api.execute = win.input.execute;
     win.input.execute = api.override_extended(win.input.execute, function(fn, str) {
+      console.log("execute: str arg", fn, str)
       str = str.trim().replace(/\s{2,}/g, " ");
       const s = str.split(" ");
+      console.log("execute: s params", str)
       switch(s[0]) {
         case "ren_ui_scale": {
           api.ui_scaling = parseFloat(s[1]);
