@@ -69,7 +69,7 @@ function diep_api() {
     
     background_color: "#ffd454",
     grid_color: "#000000",
-    grid_opacity: 0.05,
+    grid_opacity: 0.5,
     ui_scaling: 1,
     
     viewport: false,
