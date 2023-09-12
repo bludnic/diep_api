@@ -67,7 +67,7 @@ function diep_api() {
     scripts: new Set,
     menu_visible: false,
     
-    background_color: "#cdcdcd",
+    background_color: "#fc0303",
     grid_color: "#000000",
     grid_opacity: 0.05,
     ui_scaling: 1,
