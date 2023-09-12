@@ -37,7 +37,7 @@ function diep_api() {
   }
   
   const api = {
-    version: "v0.2.6",
+    version: "v0.2.7",
     
     events: new Map,
     
