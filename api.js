@@ -845,8 +845,8 @@ function diep_api() {
       modify_diep_methods(win.onresize);
     }
     
-    api.execute("ren_minimap_viewport 1");
-    api.execute("ren_pattern_grid 1");
+    // api.execute("ren_minimap_viewport 1");
+    // api.execute("ren_pattern_grid 1");
     
     /*api.on("pre.key.up", function({ code }) {
       if(code == "KeyQ") {
